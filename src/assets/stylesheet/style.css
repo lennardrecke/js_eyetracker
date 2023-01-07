@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  background-color: #dab785;
+}
+
+/*----------WRAPPER----------*/
+.container {
+  position: relative;
+  cursor: pointer;
+}
+
+/*----------EYE----------*/
+.eye-ball {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border: 5px solid #333;
+  border-radius: 50%;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.3);
+  top: -10px;
+  overflow: hidden;
+}
+
+.eye-pupil {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 5px solid #333;
+  background-color: #337A2C;
+  border-radius: 50%;
+  left: 40px;
+  top: 30px;
+}
+
+.eye-pupil::before {
+  content: '';
+  position: absolute;
+  background-color: #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  top: 22%;
+  left: 22%;
+}
+
+.eye-pupil::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  top: 35%;
+  left: 65%;
+  box-shadow: -35px 20px rgba(255, 255, 255, 0.4);
+}
+
+/*----------LASHES----------*/
+.eye-lash {
+  position: absolute;
+  height: 50%;
+  background: #dab785;
+  width: 200px;
+  z-index: 1;
+}
+
+.upper {
+  top: -50%;
+  animation: blinkbottom 3s linear infinite;
+  left: -50px;
+}
+
+.lower {
+  bottom: -50%;
+  animation: blinktop 3s linear infinite;
+  right: -50px;
+}
+
+@keyframes blinkbottom {
+  0% {
+    top: -50%;
+  }
+  5% {
+    top: 0;
+  }
+  10% {
+    top: -50%;
+  }
+}
+
+@keyframes blinktop {
+  0% {
+    bottom: -50%;
+  }
+  5% {
+    bottom: 0;
+  }
+  10% {
+    bottom: -50%;
+  }
+}
